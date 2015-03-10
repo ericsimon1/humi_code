@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- EXTERNAL LIBS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://www.google.com/jsapi"></script>
+
+    <script>
+        // onload callback
+        function drawChart()
+		{
+			var tmp = null;
+			var public_key = 'wpKwzOZaVotqOz0XJq6p';
+
+			// JSONP request
+			var jsonData = $.ajax
+            ({
+				url: 'https://data.sparkfun.com/output/' + public_key + '.json',
+				data: {page: 1},
+				dataType: 'jsonp',
+			}).done(function(results) 
+				{
+
+					var data = new google.visualization.DataTable();
+	
+					data.addColumn('datetime', 'Time');
+					data.addColumn('number', 'Temp');
+					data.addColumn('number', '% RH');
+	
+					$.each(results, function(i, row)
+					{
+						data.addRow([
+							(new Date(row.timestamp)),
+							parseFloat(row.temp),
+							parseFloat(row.rh)
+						]);
+					});
+	
+					var chart = new google.visualization.LineChart($('#chart_line').get(0));
+	
+					chart.draw(data, // line
+                    {
+						//title: 'Chart Test'
+						hAxis:
+						{
+							gridlines: 
+							{
+								count: 9,
+							} 
+						},
+						curveType: 'function',
+						colors:['#F66','#006699']
+					});
+
+				}).done(function(res) 
+					{
+						var data = google.visualization.arrayToDataTable(
+						[
+							['Label', 'Value'],
+							['Deg. F', parseFloat(res[0].temp)],
+							['% RH', parseFloat(res[0].rh)],
+						]);
+					
+                        var options = 
+                        {
+                            width: 400,
+                            height: 200,
+                            greenFrom: 60,
+                            greenTo: 72,
+							//minorTicks: 5,
+                            majorTicks: ["0", "10", " 20", "30", "40", "50", "60", "70", "80", "90", "100"]
+                        }; // end options
+
+                        var chart = new google.visualization.Gauge(document.getElementById('chart_gauge'));
+        
+                        chart.draw(data, options); //gauge
+						
+						/*setInterval(function() 
+						{
+							data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+							chart.draw(data, options);
+						}, 1000);*/
+									
+					});
+
+		} // end drawChart
+
+        // load chart lib
+        google.load('visualization', '1', 
+		{
+            packages: ['corechart', 'gauge']
+        });
+
+        // call drawChart once google charts is loaded
+        google.setOnLoadCallback(drawChart);
+    </script>
+
+</head>
+
+<body style="background:#CCC; font-family:Arial, Helvetica, sans-serif;">
+	
+    <div id="header" style="background-image:url(images/header_bg.jpg); background-repeat:repeat-x; max-width:1000px; margin:auto; border-radius:10px; box-shadow:8px 8px 6px #666; ">
+    	<h1 style="color:#FFF; padding:10px; text-shadow:2px 2px #000;">Eric's Humidor</h1>
+    </div>
+
+  <div id="main_container" style="height:100%; max-width:1000px; border:#999 medium solid; border-radius:10px; background:#FFF; box-shadow:8px 8px 6px #666; margin:auto;">
+	
+    <h2 style="padding-left:10px;">Current Humidor Conditions</h2>
+    
+    <div id="chart_gauge" style="height: 200px; width:400px; margin: 0 auto;"></div>
+    <div id="chart_line" style="width: 90%; margin: 0 auto;"></div>
+
+    <!--<p><a href="https://google-developers.appspot.com/chart/interactive/docs/gallery/linechart" target="_blank" title="Visualization: Line Chart">Google charts info</a>
+    </p>
+    <p><a href="http://www.w3schools.com/json/default.asp" target="_blank" title="JSON Tutorial">W3Schools JSON Tutorial</a>
+    </p>-->
+        
+  </div> <!--end of main_container-->
+</body>
+
+</html>
