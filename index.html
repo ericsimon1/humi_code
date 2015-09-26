@@ -66,7 +66,7 @@
 				<div id="features-wrapper">
 					<section id="features" class="container">
 						<header>
-							<h2>Building the first <strong>cooled</strong> desktop humidor!</h2>
+							<h2>Building a <strong>cooled</strong> desktop humidor!</h2>
 						</header>
 						<div class="row">
 							<div class="4u 12u(mobile)">
@@ -77,7 +77,7 @@
 										<header>
 											<h3>Okay, so what is this?</h3>
 										</header>
-										<p>This is a project to create the first commercially available desktop-sized, WiFi-enabled, cooled humidor.</p>
+										<p>This is a project to create a desktop-sized cooled humidor that is connected to the “Internet of Things” via Wi-Fi.</p>
 									</section>
 
 							</div>
@@ -89,7 +89,7 @@
 										<header>
 											<h3>How does it work?</h3>
 										</header>
-										<p>It uses thermoelectric cooling to refrigerate the storage compartment; ensuring that your cigars are not only well humidified but are also at the right temperature.</p>
+										<p>It uses thermoelectric cooling to cool the storage compartment; ensuring that your cigars are not only well humidified but are also at the right temperature.</p>
 									</section>
 
 							</div>
@@ -128,77 +128,35 @@
 									
                                     <a name="idea"></a>
                                     <h3>The Idea</h3>
-									<p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit
-									ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
-									sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
-									in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-									magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
-									consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-									justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-									mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
-									Curabitur leo nibh, rutrum eu malesuada in, tristique at erat.</p>
-									<p>Erat lorem ipsum veroeros consequat magna tempus lorem ipsum consequat
-									Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit ligula
-									vel quam viverra sit amet mollis tortor congue. Sed quis mauris sit amet
-									magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada in,
-									tristique at erat. Curabitur leo nibh, rutrum eu malesuada  in, tristique
-									at erat lorem ipsum dolor sit amet lorem ipsum sed consequat magna
-									tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros consequat
-									magna tempus</p>
-									<p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit
-									ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
-									sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
-									in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-									consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-									in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-									magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
-									consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-									justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-									mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
-									Curabitur leo nibh, rutrum eu malesuada in, tristique at erat.</p>
+									<p>This idea, like many others, came from the desire to fill a need by improving on an existing standard. Cigars must be kept in a humidified environment to ensure that they will smoke correctly. Cigars must also be kept at a cool temperature to ward off the possibility of a tobacco beetle (<em>Lasioderma serricorne</em>) infestation. Tobacco generally carries beetle eggs; beetle larvea could quickly destroy a cigar collection if the eggs were to hatch.</p>
+									<p>Many wooden humidors and humidification options are available. Modified wine coolers, commonly known as "Wineadors," are becoming increasingly common storage devices amongst cigar enthusiasts to ward against beetle outbreaks. Although these devices maintain the cigars at a cooler temperature, they have their drawbacks. Not all wine coolers are suitable for cigar storage as some refrigeration systems will cause  humidity to spike during operation. Additionally, some wine coolers require electrical modification to maintain the temperature desired for cigar storage. Wine coolers are also large, costly, and can have unwanted odors from the manufacturing process.</p>
+									<p>This idea serves to avoid the drawbacks of using a wine cooler for cigar storage while reaping the benefits in a desktop-sized package. This idea also serves to provide a simple user interface and remote monitoring.</p>
 									
                                     <a name="works"></a>
                                     <h3>How It Works</h3>
-									<p>Consequat Phasellus laoreet massa id in, tristique at erat lorem
-									ipsum dolor sit amet lorem ipsum sed consequat magna tempus veroeros
-									consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-									justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-									mollis tortor congue. Sed quis mauris sit amet magna.</p>
-									<p>Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit
-									ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
-									sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
-									in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-									consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-									in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-									magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
-									consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-									justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-									mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
-									Curabitur leo nibh, rutrum eu malesuada in, tristique at erat.</p>
-									
-                                    <a name="monitor"></a>
+									<p>At the heart of the humidor lies a thermoelectric cooler. This electronic device cools the storage compartment with only two moving parts – one fan on either side to circulate air. This type of cooling system avoids humidity spikes caused by the operation of compressor-type cooling systems commonly used in wine coolers and is almost completely silent. A laptop-charger style power supply powers the humidor.</p>
+                                    <p>An embedded microcontroller runs <a href="https://github.com/br3ttb/Arduino-PID-Library" target="_blank" title="github.com: br3ttb/Arduino-PID-Library">a feedback loop</a> which reads the temperature and humidity every 30 seconds and adjusts cooling output as necessary to maintain the desired temperature. This sophisticated control system allows for near-constant temperature and avoids condensation issues associated with thermostatic control where the cooling is either off or at full cooling power.</p>
+                                    <p>An LCD display shows temperature and humidity in the storage compartment. This display also shows a simple menu with functions to adjust the desired temperature and humidity values, calibration of the humidity sensor, and Wi-Fi settings. While commercially available products, such as humidity beads, control humidity, the humidor uses a desired humidity value in combination with the desired temperature value to adjust the color of the LCD display. Display colors serve as a quick indication of conditions within the storage compartment and change when a value is +/- 3°F or +/- 3% RH away from the desired value. Display colors and meanings are as follows:</p>
+                                    <ul class="default">
+                                      <li>Green: both temperature and humidity are within limits</li>
+                                      <li>Blue: humidity is out of limits</li>
+                                      <li>Red: temperature is out of limits</li>
+                                      <li>Purple: both temperature and humidity are out of limits</li>
+                                      <li>White: device is initializing and not actively controlling temperature</li>
+                                    </ul>
+<a name="monitor"></a>
                                     <h3>Remote Monitoring</h3>
-									<p>Nullam dolore etiam sed massa id in, tristique at erat lorem
-									ipsum dolor sit amet lorem ipsum sed consequat magna tempus veroeros
-									consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-									justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-									mollis tortor congue. Sed quis mauris sit amet magna.</p>
-                                    
+                                    <p>Since the humidor is connected to the Internet via Wi-Fi, it can post it’s temperature and humidity readings to a data server and allow the user to monitor these conditions from any other internet-connected device. Below is a live feed from the prototype humidor showing the current temperature and humidity readings in gauge-style readouts as well as a log of the last 24 hours.</p>
                                     <span class="feed">
-                                        <div class="gauges" id="chart_gauge" align="center"></div>
-                                        <div class="line_graph" id="chart_line" align="center"></div>
+                                    	<div align="center">
+                                            <div class="gauges" id="temp_gauge"></div>
+                                            <div class="gauges" id="rh_gauge"></div>
+                                        </div>
+                                        <div class="line_graph" id="chart_line"></div>
                                     </span>
                                     
-									<p>Sed massa id justo mattis pharetra. Fusce suscipit
-									ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
-									sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
-									in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-									consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-									in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-									magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
-									consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-									justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-									mollis tortor congue. Sed quis mauris sit amet magna accumsan.</p>
+									<!--<p>Sed massa id justo mattis pharetra. Fusce suscipit
+									ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris sit amet magna accumsan.</p>-->
 								</article>
 
 						</div>
@@ -282,7 +240,7 @@
 					<div id="copyright" class="container">
 						<ul class="links">
 							<li style="padding-left:1em">&copy; E. S. Humidor Co. All rights reserved.</li>
-                            <li>U. S. Patnent Pending</li>
+                            <li>U. S. Patent Pending</li>
                             <li>Design: <a href="http://html5up.net" target="_blank" title="Visit HTML5 UP">HTML5 UP</a></li>
                             <li></li>
 						</ul>

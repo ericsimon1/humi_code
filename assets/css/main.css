@@ -5,6 +5,11 @@
 	Strongly Typed by HTML5 UP
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	
+	*******
+	
+	Teal: #99CCCC
+	Orange: #FD887A
 */
 
 /* Reset */
@@ -1199,9 +1204,9 @@
 	}
 	
 	.gauges {
-		 height: 200px;
-		 width:400px;
-		 margin: 0 auto;
+		 height: 250px;
+		 width: 250px;
+		 display:inline-block;
 	}
 	
 	.line_graph {
@@ -1263,12 +1268,12 @@
 
 	ul.default {
 		list-style: disc;
-		margin-left: 1em;
+		margin-left: 2em;
 	}
 
 		ul.default li {
-			padding-left: 0.5em;
-			margin: 0.75em 0 0.75em 0;
+			padding-left: 0.25em;
+			/*margin: 0.75em 0 0.75em 0;*/
 		}
 
 			ul.default li:first-child {
@@ -1336,13 +1341,13 @@
 			}
 
 	ol.default {
-		list-style: decimal;
+		list-style: disc;
 		margin-left: 1em;
 	}
 
 		ol.default li {
-			padding-left: 0.5em;
-			margin: 0.75em 0 0.75em 0;
+			padding-left: 0.25em;
+			/*margin: 0.75em 0 0.75em 0;*/
 		}
 
 			ol.default li:first-child {
@@ -1500,7 +1505,7 @@
 		input[type="reset"]:hover,
 		button:hover,
 		.button:hover {
-			background: #fd887a;
+			background: #FD887A;
 		}
 
 		input[type="button"]:active,
